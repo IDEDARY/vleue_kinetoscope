@@ -5,9 +5,9 @@ use vleue_kinetoscope::{AnimatedImageController, AnimatedImagePlugin};
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
-        .add_plugins(AnimatedImagePlugin)
-        .add_systems(Startup, setup)
-        .add_systems(Update, (log_updates, reset))
+        //.add_plugins(AnimatedImagePlugin)
+        //.add_systems(Startup, setup)
+        //.add_systems(Update, (log_updates, reset))
         .run();
 }
 
@@ -38,7 +38,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, window: Query<&
         commands.spawn((
             AnimatedImageController::play(asset_server.load(file)),
             Transform::from_xyz(
-                -window_width * ((-1.0 as f32).powi(i as i32)) / 2.0,
+                -window_width * ((-1.0_f32).powi(i as i32)) / 2.0,
                 -75.0,
                 0.0,
             ),

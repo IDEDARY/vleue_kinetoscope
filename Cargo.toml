@@ -1,47 +1,39 @@
 [package]
-name = "vleue_kinetoscope"
-version = "0.4.1"
-edition = "2024"
-exclude = ["animated-gif.webp", "assets/big-buck-bunny.webp"]
-authors = ["François Mockers <francois.mockers@vleue.com>"]
-description = "Animated GIF player for Bevy"
-repository = "https://github.com/vleue/vleue_kinetoscope"
-homepage = "https://github.com/vleue/vleue_kinetoscope"
-documentation = "https://docs.rs/vleue_kinetoscope"
-keywords = ["bevy", "animation", "gif"]
-license = "MIT OR Apache-2.0"
-readme = "README.md"
-categories = ["game-development"]
+    authors       = ["François Mockers <francois.mockers@vleue.com>"]
+    categories    = ["game-development"]
+    description   = "Animated GIF player for Bevy"
+    documentation = "https://docs.rs/vleue_kinetoscope"
+    edition       = "2024"
+    exclude       = ["animated-gif.webp", "assets/big-buck-bunny.webp"]
+    homepage      = "https://github.com/vleue/vleue_kinetoscope"
+    keywords      = ["animation", "bevy", "gif"]
+    license       = "MIT OR Apache-2.0"
+    name          = "vleue_kinetoscope"
+    readme        = "README.md"
+    repository    = "https://github.com/vleue/vleue_kinetoscope"
+    version       = "0.5.0"
 
 [features]
-default = ["gif", "webp", "streaming"]
-gif = ["image/gif"]
-webp = ["image/webp"]
-streaming = ["bevy_tasks/multi_threaded"]
+    default   = ["gif", "streaming", "webp"]
+    gif       = ["image/gif"]
+    streaming = ["bevy_tasks/multi_threaded"]
+    webp      = ["image/webp"]
 
 [dependencies]
-image = { version = "0.25", default-features = false }
-thiserror = "1.0"
-smallvec = "1.15"
-log = "0.4"
-crossbeam-channel = "0.5"
-bevy_ecs = { version = "0.16.0", default-features = false }
-bevy_app = { version = "0.16.0", default-features = false }
-bevy_asset = { version = "0.16.0", default-features = false }
-bevy_image = { version = "0.16.0", default-features = false }
-bevy_reflect = { version = "0.16.0", default-features = false }
-bevy_tasks = { version = "0.16.0", default-features = false, optional = true }
-bevy_time = { version = "0.16.0", default-features = false }
-bevy_sprite = { version = "0.16.0", default-features = false }
+    bevy_app          = { version = "0.18", default-features = false }
+    bevy_asset        = { version = "0.18", default-features = false }
+    bevy_ecs          = { version = "0.18", default-features = false }
+    bevy_image        = { version = "0.18", default-features = false }
+    bevy_reflect      = { version = "0.18", default-features = false }
+    bevy_sprite       = { version = "0.18", default-features = false }
+    bevy_tasks        = { version = "0.18", default-features = false, optional = true }
+    bevy_time         = { version = "0.18", default-features = false }
+    crossbeam-channel = "0.5"
+    image             = { version = "0.25", default-features = false }
+    log               = "0.4"
+    smallvec          = "1.15"
+    thiserror         = "1.0"
 
 
 [dev-dependencies]
-bevy = { version = "0.16.0", default-features = false, features = [
-    "bevy_window",
-    "bevy_log",
-    "bevy_sprite",
-    "bevy_ui",
-    "bevy_winit",
-    "default_font",
-    "x11",
-] }
+    bevy = { version = "0.18", default-features = false, features = ["bevy_log", "bevy_sprite", "bevy_ui", "bevy_window", "bevy_winit", "default_font", "x11"] }
