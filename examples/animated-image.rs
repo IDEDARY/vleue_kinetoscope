@@ -5,9 +5,9 @@ use vleue_kinetoscope::{AnimatedImageController, AnimatedImagePlugin};
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
-        //.add_plugins(AnimatedImagePlugin)
-        //.add_systems(Startup, setup)
-        //.add_systems(Update, (log_updates, reset))
+        .add_plugins(AnimatedImagePlugin)
+        .add_systems(Startup, setup)
+        .add_systems(Update, (log_updates, reset))
         .run();
 }
 
