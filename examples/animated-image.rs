@@ -60,49 +60,49 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, window: Query<&
                     text.spawn((
                         TextSpan(format!("{}\n", kind)),
                         TextFont {
-                            font_size: 60.0,
+                            font_size: FontSize::Px(60.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("Play Count: ".to_string()),
                         TextFont {
-                            font_size: 50.0,
+                            font_size: FontSize::Px(50.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("0".to_string()),
                         TextFont {
-                            font_size: 50.0,
+                            font_size: FontSize::Px(50.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("\ncurrent frame: ".to_string()),
                         TextFont {
-                            font_size: 30.0,
+                            font_size: FontSize::Px(30.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("0".to_string()),
                         TextFont {
-                            font_size: 30.0,
+                            font_size: FontSize::Px(30.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("/".to_string()),
                         TextFont {
-                            font_size: 30.0,
+                            font_size: FontSize::Px(30.0),
                             ..default()
                         },
                     ));
                     text.spawn((
                         TextSpan("0".to_string()),
                         TextFont {
-                            font_size: 30.0,
+                            font_size: FontSize::Px(30.0),
                             ..default()
                         },
                     ));
